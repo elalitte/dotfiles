@@ -1,0 +1,123 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" Plugins ajoutés par Eric
+Plugin 'mattn/emmet-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" FIN DE VUNDLE
+
+"
+" Leader
+"
+" Choisit une touche comme leader pour ajouter des fonctionnalités
+    let mapleader = ','
+
+" mapping pour EMMET
+let g:user_emmet_leader_key=','
+
+" mapping pour les brackets complexes en français
+nmap < [
+nmap > ]
+omap < [
+omap > ]
+xmap < [
+xmap > ]
+" TEXT BUBBLING
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+map <DOWN> <ESC>
+map <UP> <ESC>
+map <LEFT> <ESC>
+map <RIGHT> <ESC>
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+set relativenumber
+set incsearch "surligner les recherches
+set hlsearch " surligner toutes les recherches
+set showmatch " afficher les parenthèses liées
+set number      " Affiche les numéros de ligne
+set smartindent " Indentation intelligente
+set autoindent  " Conserve l'indentation sur une nouvelle ligne
+set ruler       " Affiche la position du curseur
+set list	" Affiche les caractères invisibles
+set ts=4 sts=4 sw=4 noexpandtab	"Met les tab à 4 caractères
+set clipboard=unnamed	" Pour pouvoir copier-coller depuis ou vers l'os 
+set linebreak
+syntax on
+filetype on
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Change les symboles par défaut pour tab et eol
+set listchars=tab:▸\ ,eol:¬
+
+" Change la couleur de tab et eol pour la mettre comme les commentaires
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  " Enable file type detection
+  filetype on
+  " Syntax of these languages is fussy over tabs Vs spaces
+  autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+  autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+  " Customisations based on house-style (arbitrary)
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  
+  " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.rss setfiletype xml
+endif
