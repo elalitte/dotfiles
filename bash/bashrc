@@ -30,7 +30,7 @@ parse_git_branch()
 
 parse_git_status()
 {
-	local STATUS=$(git diff --exit-code)
+	local STATUS=$(git status --porcelain)
 	if [[ ! -z "$STATUS" ]];
 	then
 		echo "(*)"
