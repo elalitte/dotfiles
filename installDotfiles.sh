@@ -20,6 +20,16 @@ else
 	ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 fi
 
+# Si le .bashrc existe on le sauvegarde et on créé un lien symbolique vers le nouveau
+# Sinon, on créé juste le lien
+if [ -f ~/.bashrc ]
+then
+	mv ~/.bashrc ~/.bashrc.old
+	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+else
+	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+fi
+
 # Installation de vundle pour vim
 # On vérifie que les répertoires existent sinon on les créé
 if [ -d ~/.vim ]
