@@ -74,10 +74,12 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+" empêcher l'utilisation des flêches
 map <DOWN> <ESC>
 map <UP> <ESC>
 map <LEFT> <ESC>
 map <RIGHT> <ESC>
+" Utiliser les hjkl entre les windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
