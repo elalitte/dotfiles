@@ -54,6 +54,9 @@ filetype plugin indent on    " required
 " Choisit une touche comme leader pour ajouter des fonctionnalités
     let mapleader = ','
 
+" On map le 0 pour venir au début du texte
+nmap 0 ^
+
 " mapping pour EMMET
 let g:user_emmet_leader_key=','
 
