@@ -48,9 +48,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 " FIN DE VUNDLE
 
-"
-" Leader
-"
+""""""""""
+" Leader "
+""""""""""
 " Choisit une touche comme leader pour ajouter des fonctionnalités
     let mapleader = ','
 
@@ -84,11 +84,17 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+" nmap k gk	" Pour monter dans les très longues lignes
+" nmap j gj	" Pour descendre dans les très longues lignes
+
 set relativenumber
 set incsearch "surligner les recherches
 set hlsearch " surligner toutes les recherches
 set showmatch " afficher les parenthèses liées
 set number      " Affiche les numéros de ligne
+set backspace=indent,eol,start      " Comportement normal de la barre espace
+set history=1000	" garde 1000 lignes d'historique
+set scrolloff=4	" garde 4 lignes au moins après le curseur
 set smartindent " Indentation intelligente
 set autoindent  " Conserve l'indentation sur une nouvelle ligne
 set ruler       " Affiche la position du curseur
@@ -122,6 +128,7 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd Filetype help nnoremap <buffer> q :q<CR>
   
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
