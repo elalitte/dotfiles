@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
@@ -92,6 +93,9 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 " nmap k gk	" Pour monter dans les très longues lignes
 " nmap j gj	" Pour descendre dans les très longues lignes
+
+" Ajout pour avoir . fonctionnel sur surround
+silent! call repeat#set("\<Plug>vim-surround", v:count)
 
 set relativenumber
 set incsearch "surligner les recherches
