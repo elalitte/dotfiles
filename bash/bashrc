@@ -23,7 +23,7 @@ alias gc='git add . && git commit -m'
 function gacp() {
   git add .
   git commit -m "$1"
-  git push
+  git push local master
 }
 
 parse_git_branch()
