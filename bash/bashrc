@@ -18,6 +18,13 @@ alias ls='ls $LS_OPTIONS'
 # alias mv='mv -i'
 export VISUAL=vim
 export EDITOR="$VISUAL"
+# alias pour simplifier les commit et push de git
+alias gc='git add . && git commit -m'
+function gacp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
 
 parse_git_branch()
 {
