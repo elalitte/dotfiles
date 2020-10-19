@@ -119,6 +119,8 @@ filetype on
 nmap <leader>l :set list!<CR>
 " turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
+" delete without putting in default register "
+vnoremap <leader>p "_dP
 
 " Change les symboles par défaut pour tab et eol
 set listchars=tab:▸\ ,eol:¬
