@@ -146,3 +146,11 @@ if has("autocmd")
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
+# Ajout des skeletons par défaut pour les extensions de fichiers
+if [ -d ~/vim ]
+	echo "Le repertoire vim existe déjà"
+else
+	mkdir ~/vim/
+	ln -s ~/dotfiles/vim/skeletons/* ~/vim/
+fi
