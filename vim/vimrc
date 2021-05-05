@@ -129,6 +129,10 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
+" Mise en place des fichiers par défaut
+:autocmd BufNewFile  *.sh      0r ~/vim/skeleton.sh
+:autocmd BufNewFile  *.html      0r ~/vim/skeleton.html
+
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   " Enable file type detection

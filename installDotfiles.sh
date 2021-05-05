@@ -46,3 +46,11 @@ fi
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Et on installe les plugins
 vim +PluginInstall +qall
+
+# Ajout des skeletons par défaut pour les extensions de fichiers
+if [ -d ~/vim ]
+	echo "Le repertoire vim existe déjà"
+else
+	mkdir ~/vim/
+	ln -s ~/dotfiles/vim/skeletons/* ~/vim/
+fi
