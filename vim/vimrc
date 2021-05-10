@@ -68,6 +68,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 
+" mapping pour avoir une ligne en haut avec les buffers
+let g:airline#extensions#tabline#enabled = 1
+" et on map C-n pour passer d'un buffer à l'autre
+nmap <C-n> :bn<CR>
+
 " mapping pour les brackets complexes en français
 nmap < [
 nmap > ]
