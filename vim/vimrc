@@ -30,10 +30,15 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " Plugins ajoutés par Eric
+" Emmet pour la complétion HTML
 Plugin 'mattn/emmet-vim'
+" La ligne avancée en bas de vim ET les buffers en tabs en haut
 Plugin 'vim-airline/vim-airline'
+" La correction syntaxique quand on sauvegarde
 Plugin 'scrooloose/syntastic'
+" L'auto-complétion
 Plugin 'vim-scripts/AutoComplPop'
+" Utilisation et création de snippets avancées
 " Plugin 'SirVer/ultisnips' | Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
