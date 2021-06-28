@@ -34,7 +34,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'vim-scripts/AutoComplPop'
-Plugin 'SirVer/ultisnips' | Plugin 'honza/vim-snippets'
+" Plugin 'SirVer/ultisnips' | Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
