@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -21,18 +21,19 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
 " Plugin 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " Plugins ajoutés par Eric
 Plugin 'mattn/emmet-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-scripts/AutoComplPop'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +67,11 @@ let g:user_emmet_leader_key=','
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" mapping pour avoir une ligne en haut avec les buffers
+let g:airline#extensions#tabline#enabled = 1
+" et on map C-n pour passer d'un buffer à l'autre
+nmap <C-n> :bn<CR>
 
 " mapping pour les brackets complexes en français
 nmap < [
