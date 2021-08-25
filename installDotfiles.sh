@@ -33,11 +33,13 @@ fi
 # Installation de vundle pour vim
 # On vérifie que les répertoires existent sinon on les créé
 if [ -d ~/.vim ]
+then
 	echo "Le repertoire .vim existe déjà"
 else
 	mkdir ~/.vim
 fi
 if [ -d ~/.vim/bundle ]
+then
 	echo "Le repertoire .vim existe déjà"
 else
 	mkdir ~/.vim/bundle
@@ -49,6 +51,7 @@ vim +PluginInstall +qall
 
 # Ajout des skeletons par défaut pour les extensions de fichiers
 if [ -d ~/vim ]
+then
 	echo "Le repertoire vim existe déjà"
 else
 	mkdir ~/vim/
