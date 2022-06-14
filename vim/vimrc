@@ -39,7 +39,9 @@ Plugin 'scrooloose/syntastic'
 " L'auto-complétion
 Plugin 'vim-scripts/AutoComplPop'
 " Utilisation et création de snippets avancées
-" Plugin 'SirVer/ultisnips' | Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips' | Plugin 'honza/vim-snippets'
+" Pour écrire sur plusieurs lignes en même temps
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
