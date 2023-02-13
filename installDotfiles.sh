@@ -44,6 +44,8 @@ then
 else
 	mkdir ~/.vim/bundle
 fi
+# On installe ultisnips
+apt install ultisnips
 # On clone vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Et on installe les plugins
