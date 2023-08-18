@@ -4,7 +4,7 @@
 whereis nvim >/dev/null 2<&1
 if [ $? -eq 0 ]
 then
-  "Neovim est déjà installé"
+  "Neovim est deja installe"
 else
   # On regarde sous quel système on est
   systeme=$(uname -a |cut -d " " -f 1)
@@ -13,6 +13,7 @@ else
     brew install neovim
   else 
     apt-get install neovim
+  fi
 fi
 
 # Si le répertoire de configuration nvim existe on le sauvegarde et on créé un
