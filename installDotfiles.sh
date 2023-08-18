@@ -1,13 +1,34 @@
 #!/bin/bash
 
-# Si le .vimrc existe on le sauvegarde et on créé un lien symbolique vers le nouveau
-# Sinon, on créé juste le lien
-if [ -f ~/.vimrc ]
+# On teste si nvim existe, et si non, on l'installe
+whereis nvim >/dev/null 2<&1
+if [ $? -eq 0 ]
 then
-	mv ~/.vimrc ~/.vimrc.old
-	ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+  "Neovim est déjà installé"
 else
-	ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+  # On regarde sous quel système on est
+  systeme=$(uname -a |cut -d " " -f 1)
+  if [ $systeme = "Darwin" ]
+  then
+    brew install neovim
+  else 
+    apt-get install neovim
+fi
+
+# Si le répertoire de configuration nvim existe on le sauvegarde et on créé un
+# lien symbolique vers le nouveau. Sinon, on créé juste le lien
+if [ -d ~/.config/nvim ]
+then
+	mv ~/.config/nvim ~/.config/nvim.old
+	ln -s ~/dotfiles/nvim/ ~/.config/
+else
+  if [ -d ~/.config ]
+  then
+	  ln -s ~/dotfiles/nvim/ ~/.config/
+  else
+    mkdir ~/.config/
+	  ln -s ~/dotfiles/nvim/ ~/.config/
+  fi
 fi
 
 # Si le .tmux.conf existe on le sauvegarde et on créé un lien symbolique vers le nouveau
@@ -29,6 +50,7 @@ then
 else
 	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 fi
+<<<<<<< HEAD
 
 # Installation de vundle pour vim
 # On vérifie que les répertoires existent sinon on les créé
@@ -59,3 +81,5 @@ else
 	mkdir ~/vim/
 	ln -s ~/dotfiles/vim/skeletons/* ~/vim/
 fi
+=======
+>>>>>>> 868910b (Replaced vim with neovim)

@@ -1,0 +1,7 @@
+require("elalitte.lazy")
+require("elalitte.remap")
+require("elalitte.options")
+require("elalitte.plugins.telescope")
+require("elalitte.plugins.bufferline")
+require("elalitte.plugins.gruvbox")
+require("elalitte.plugins.lsp")
