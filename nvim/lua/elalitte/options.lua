@@ -22,7 +22,7 @@ vim.o.colorcolumn = "82" -- Color xxx colum
 vim.o.wrap = false -- don't wrap lines at end of window
 -- vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]] -- Color of column
 vim.o.clipboard = [[unnamed,unnamedplus]] -- to copy/paste to/from system
-vim.o.timeoutlen = 300 -- timeout to wait between keys combination
+-- vim.o.timeoutlen = 1000 -- timeout to wait between keys combination
 vim.o.completeopt = [[menuone,noinsert,noselect]] -- options for automatic completion
 
 -- from primegean

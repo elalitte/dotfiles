@@ -14,8 +14,8 @@ vim.keymap.set({"n", "v", "i"}, "<C-l>", "<C-w>l") -- go to left window
 -- From primegean
 vim.g.mapleader = " " -- leader key on space
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- go to Ex page
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- bubble line down in visual mode
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- bubble line up in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- bubble lines down in visual mode
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- bubble lines up in visual mode
 vim.keymap.set("n", "J", "mzJ`z") -- add next line behind this one
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- go down with middle screen
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- go up with middle screen
@@ -38,4 +38,7 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/elalitte/lazy.lua<
 vim.keymap.set("n", "<leader><leader>", function() -- source file
     vim.cmd("so")
 end)
+
+-- maison
+vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>") -- toogle nvim.tree
 
