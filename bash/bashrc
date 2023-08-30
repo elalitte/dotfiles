@@ -24,7 +24,7 @@ alias gc='git add . && git commit -m'
 function gacp() {
   git add .
   git commit -m "$1"
-  git push local master
+  git push origin master
 }
 
 # parse_git_branch()

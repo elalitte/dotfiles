@@ -4,7 +4,7 @@
 whereis nvim >/dev/null 2<&1
 if [ $? -eq 0 ]
 then
-  "Neovim est deja installe"
+  echo "Neovim est deja installe, on va supprimer les anciennes configurations"
 else
   # On regarde sous quel système on est
   systeme=$(uname -a |cut -d " " -f 1)
@@ -16,12 +16,30 @@ else
   fi
 fi
 
+# On teste si tmux existe, et si non, on l'installe
+whereis tmux >/dev/null 2<&1
+if [ $? -eq 0 ]
+then
+  echo "tmux est deja installe"
+else
+  # On regarde sous quel système on est
+  systeme=$(uname -a |cut -d " " -f 1)
+  if [ $systeme = "Darwin" ]
+  then
+    brew install tmux
+  else 
+    apt-get install tmux
+  fi
+fi
+
 # Si le répertoire de configuration nvim existe on le sauvegarde et on créé un
 # lien symbolique vers le nouveau. Sinon, on créé juste le lien
 if [ -d ~/.config/nvim ]
 then
 	mv ~/.config/nvim ~/.config/nvim.old
 	ln -s ~/dotfiles/nvim/ ~/.config/
+  rm -rf ~/.local/share/nvim
+  rm -rf ~/.local/state/nvim
 else
   if [ -d ~/.config ]
   then
