@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # On teste si nvim existe, et si non, on l'installe
-whereis nvim >/dev/null 2<&1
+which nvim >/dev/null 2<&1
 if [ $? -eq 0 ]
 then
   echo "Neovim est deja installe, on va supprimer les anciennes configurations"
@@ -12,7 +12,7 @@ else
   then
     brew install neovim
   else 
-    apt-get install neovim
+    apt-get -y install neovim
   fi
 fi
 
@@ -28,7 +28,7 @@ else
   then
     brew install tmux
   else 
-    apt-get install tmux
+    apt-get -y install tmux
   fi
 fi
 
