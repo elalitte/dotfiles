@@ -21,7 +21,8 @@ local plugins = {
   'mattn/emmet-vim', -- generate tag trees easily
   'christoomey/vim-tmux-navigator', -- pour naviguer dans les fenêtres
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' }, -- les tabs en haut des buffers
-  { 'ellisonleao/gruvbox.nvim', priority = 1000 }, -- thème pour vim -- easily jump to anywhere on the screen
+  -- { 'ellisonleao/gruvbox.nvim', priority = 1000 }, -- thème pour vim
+  {'marko-cerovac/material.nvim'}, -- thème pour vim
   { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' } }, -- fuzzy finder
   {
     "nvim-treesitter/nvim-treesitter",
