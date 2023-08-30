@@ -1,5 +1,6 @@
-vim.cmd 'colorscheme material'
+-- vim.g.material_style = "oceanic"
 vim.g.material_style = "deep ocean"
+vim.cmd 'colorscheme material'
 require('material').setup({
 
     contrast = {
