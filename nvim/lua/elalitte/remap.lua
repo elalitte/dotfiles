@@ -2,8 +2,8 @@
 vim.keymap.set("n", "<C-n>", ":bn<CR>") -- Next buffer
 vim.keymap.set("n", "<C-b>", ":bp<CR>") -- Previous buffer
 vim.keymap.set("n", "0", "^") -- 0 to go to the beginning of line
-vim.keymap.set("n", "<C-a>", "ddkP") -- bubble line up
-vim.keymap.set("n", "<C-q>", "ddp") -- bubble line down 
+vim.keymap.set("n", "<C-q>", "ddkP") -- bubble line up
+vim.keymap.set("n", "<C-w>", "ddp") -- bubble line down 
 vim.keymap.set("n", "<C-u>", "<C-u>zz") -- back to middle when page up
 vim.keymap.set("n", "<C-d>", "<C-d>zz") -- back to middle when page down 
 vim.keymap.set({"n", "v", "i"}, "<C-h>", "<C-w>h") -- go to left window
@@ -27,6 +27,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]]) -- only in vim normal mode
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- delete to the void register
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 -- vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set({"n", "v"}, "<leader>d", [["_d]]) -- delete to the void register
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
