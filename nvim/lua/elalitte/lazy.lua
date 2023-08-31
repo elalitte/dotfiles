@@ -20,6 +20,7 @@ local plugins = {
   'tpope/vim-commentary', -- comment made easy
   'mattn/emmet-vim', -- generate tag trees easily
   'christoomey/vim-tmux-navigator', -- pour naviguer dans les fenêtres
+  'github/copilot.vim',
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' }, -- les tabs en haut des buffers
   -- { 'ellisonleao/gruvbox.nvim', priority = 1000 }, -- thème pour vim
   {
