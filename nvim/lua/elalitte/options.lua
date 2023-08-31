@@ -17,7 +17,7 @@ vim.opt.splitright = true -- split new window right
 vim.wo.cursorline = true -- show actual cursorline
 vim.bo.synmaxcol = 4000 -- wrap line only after 4000 chars
 vim.o.list = true -- Show non printed characters
-vim.o.listchars = 'tab:>~,eol:↵' -- Set non printed character values
+vim.o.listchars = 'tab:  ,eol:↵' -- Set non printed character values
 vim.o.colorcolumn = "82" -- Color xxx colum
 vim.o.wrap = false -- don't wrap lines at end of window
 -- vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]] -- Color of column
