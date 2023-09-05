@@ -20,7 +20,7 @@ local plugins = {
   'tpope/vim-commentary', -- comment made easy
   'mattn/emmet-vim', -- generate tag trees easily
   'christoomey/vim-tmux-navigator', -- pour naviguer dans les fenêtres
-  'github/copilot.vim',
+  'github/copilot.vim', -- pour utiliser github copilot
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' }, -- les tabs en haut des buffers
   -- { 'ellisonleao/gruvbox.nvim', priority = 1000 }, -- thème pour vim
   {
@@ -28,7 +28,7 @@ local plugins = {
     lazy = false,
     priority = 1000,
     opts = {},
-  },
+  }, -- thème pour la coloration
   { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' } }, -- fuzzy finder
   {
     "nvim-treesitter/nvim-treesitter",
@@ -55,10 +55,11 @@ local plugins = {
 
       -- Autocompletion
       {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-path'},     -- Optional for path completion
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
     },
-  }, -- lsp
+  }, -- lsp and autocompletion
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",

@@ -1,0 +1,40 @@
+matches:
+  ## Dev
+  # HTML
+  - trigger: ":div"
+    replace: '<div>$|$</div>'
+  - trigger: ":cla"
+    replace: 'class=""'
+  - trigger: ":table"
+    replace: |
+      <table>
+        <thead>
+          <tr>
+            <th><th>
+            <th><th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><th>
+            <td><td>
+          </tr>
+          <tr>
+            <th><th>
+            <td><td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th><th>
+            <th><th>
+          </tr>
+        <tfoot>
+      </table>
+
+  # PHP
+  - trigger: ":pfun"
+    replace: |
+      function myFunction() {
+        ...
+      }
