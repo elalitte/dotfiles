@@ -5,19 +5,19 @@
 # You can use this file to define the base matches (aka snippets)
 # that will be available in every application when using espanso.
 
+imports:
+  - "/Users/elalitte/import.yml"
+
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
-  - trigger: ":sign"
-    replace: "Merci,\n"
-  
   ## Erreurs de frappe
   # Remplace serach par search
   - trigger: "serach"
     replace: "search"
+    word: true
+  - trigger: "apt-serach"
+    replace: "apt-search"
     word: true
 
   ## Shell/réseau
@@ -37,6 +37,34 @@ matches:
       type: shell
       params:
         cmd: "ifconfig en0 | grep inet | cut -d \" \" -f 2"
+  - trigger: ":espa"
+    replace: "{{output}}"
+    vars:
+    - name: output
+      type: shell
+      params:
+        cmd: "echo 'cat ~/dotfiles/espanso/match/*.yml |grep trigger'"
+  - trigger: ":gitp"
+    replace: "{{output}}"
+    vars:
+    - name: output
+      type: shell
+      params:
+        cmd: "echo 'git add .;git commit -m \"Ajout\";git push origin master'"
+
+  ## Useful
+  # Get my address
+  - trigger: ":myadd"
+    replace: "443 route des landes du parcot, 40180, Candresse"
+  # Get my email address
+  - trigger: ":myemail"
+    replace: "eric@lalitte.com"
+  # Get my pro email address
+  - trigger: ":proemail"
+    replace: "eric.lalitte@fermes-larrere.com"
+  # difficult emoji ;-)
+  - trigger: ":dunno"
+    replace: "¯\\_(ツ)_/¯"
 
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 
@@ -50,14 +78,3 @@ matches:
         type: date
         params:
           format: "%m/%d/%Y"
-
-  # Print the output of a shell command
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "Hello !"
-
-  # And much more! For more information, visit the docs: https://espanso.org/docs/

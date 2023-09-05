@@ -5,7 +5,7 @@ matches:
     replace: '<div>$|$</div>'
   - trigger: ":cla"
     replace: 'class=""'
-  - trigger: ":table"
+  - trigger: ":tab"
     replace: |
       <table>
         <thead>
@@ -31,7 +31,21 @@ matches:
           </tr>
         <tfoot>
       </table>
-
+  - trigger: ":doc"
+    replace: |
+      <!doctype html>
+      <html lang="fr">
+      <head>
+        <meta charset="utf-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+      </head>
+      <body>
+        ...
+        ...
+      </body>
+      </html>
   # PHP
   - trigger: ":pfun"
     replace: |
