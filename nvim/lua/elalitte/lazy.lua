@@ -88,5 +88,9 @@ local plugins = {
     "ggandor/leap.nvim",
     init = function() require("leap").set_default_keymaps() end
   }, -- easily jump to anywhere on the screen
+  -- {
+  --   {'akinsho/toggleterm.nvim', version = "*", config = true}
+  -- }
+  { "lukas-reineke/indent-blankline.nvim" }, -- Show a vertical line for paragraphs
 }
 require("lazy").setup(plugins, opts)

@@ -13,3 +13,17 @@ matches:
         type: shell
         params:
             cmd: "echo cd /Users/elalitte/dotfiles/nvim/lua/elalitte/"
+  - trigger: ":hom"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+            cmd: "echo cd /Users/elalitte/"
+  - trigger: ":tmun"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+            cmd: "echo tmux new -s "

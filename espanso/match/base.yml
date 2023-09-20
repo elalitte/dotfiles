@@ -36,7 +36,7 @@ matches:
     - name: output
       type: shell
       params:
-        cmd: "ifconfig en0 | grep inet | cut -d \" \" -f 2"
+        cmd: "ifconfig en0 | grep inet | grep netma | cut -d \" \" -f 2"
   - trigger: ":espa"
     replace: "{{output}}"
     vars:
