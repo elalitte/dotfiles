@@ -2,34 +2,304 @@
 require("bufferline").setup{}
 local bufferline = require('bufferline')
 bufferline.setup({
-    options = {
-	themeable = true,
-	numbers = "none",
-        style_preset = bufferline.style_preset.slant,
-	separator_style = "slant",
-    	offsets = {
-    	    {
-    	        filetype = "NvimTree",
-    	        text = "File Explorer",
-    	        highlight = "Directory",
-    	        separator = true -- use a "true" to enable the default, or set your own character
-    	    }
-    	},
-	-- highlights = {
-	-- 	fill = {
-	-- 		guifg = { attribute = "fg", highlight = "#ff0000" },
-	-- 		guibg = { attribute = "bg", highlight = "#ff0000" },
-	-- 	},
-	-- 	separator = {
-	-- 		guifg = { attribute = "bg", highlight = "TabLine" },
-	-- 		guibg = { attribute = "bg", highlight = "TabLine" },
-	-- 	},
-	-- 	separator_selected = {
-	-- 		guifg = { attribute = "bg", highlight = "Normal" },
-	-- 		guibg = { attribute = "bg", highlight = "Normal" },
-	-- 	},
-	-- 	buffer_selected = { bg = 'NONE', bold = true, italic = false },
-	-- },
+  options = {
+	  themeable = true,
+	  numbers = "none",
+	  separator_style = "slant",
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        highlight = "Directory",
+        separator = true -- use a "true" to enable the default, or set your own character
+      }
     },
+    -- indicator = {
+    --   style = 'underline',
+    -- },
+  },
+ highlights = {
+  -- fill = { -- Espace à droite des buffers
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- background = { -- Le fond des tabs non sélectionnés
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- tab = { -- ???
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- tab_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- tab_separator = {
+  --   fg = '#ff0000',
+  --   bg = '#00ff00',
+  -- },
+  -- tab_separator_selected = {
+  --   fg = '#ff0000',
+  --   bg = '#00ff00',
+  --   sp = '<colour-value-here>',
+  --   underline = '<colour-value-here>',
+  -- },
+  -- tab_close = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- close_button = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- close_button_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- close_button_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- buffer_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+ 	buffer_selected = {
+    fg = '#ff0000',
+    bg = '#24283B',
+    bold = true,
+    italic = true
+  },
+  -- numbers = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- numbers_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- numbers_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- diagnostic = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- diagnostic_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- diagnostic_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- hint = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- hint_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- hint_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- hint_diagnostic = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- hint_diagnostic_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- hint_diagnostic_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- info = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- info_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- info_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- info_diagnostic = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- info_diagnostic_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- info_diagnostic_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- warning = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- warning_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- warning_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- warning_diagnostic = {
+  --     fg = '#ff0000',
+  --     sp = '<colour-value-here>',
+  --     bg = '#00ff00',
+  -- },
+  -- warning_diagnostic_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- warning_diagnostic_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- error = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  -- },
+  -- error_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- error_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- error_diagnostic = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  -- },
+  -- error_diagnostic_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- error_diagnostic_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     sp = '<colour-value-here>',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- modified = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- modified_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- modified_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- duplicate_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     italic = true,
+  -- },
+  -- duplicate_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     italic = true,
+  -- },
+  -- duplicate = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     italic = true,
+  -- },
+  -- separator_selected = {
+  --     fg = '#000000',
+  --     bg = '#24283B',
+  -- },
+  -- separator_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- separator = {
+  --     fg = '#24283B',
+  --     bg = '#24283B',
+  -- },
+  -- indicator_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- indicator_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- pick_selected = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- pick_visible = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- pick = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  --     bold = true,
+  --     italic = true,
+  -- },
+  -- offset_separator = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- },
+  -- trunc_marker = {
+  --     fg = '#ff0000',
+  --     bg = '#00ff00',
+  -- }
+ },
 })
 vim.o.background = "dark" -- or "light" for light mode
