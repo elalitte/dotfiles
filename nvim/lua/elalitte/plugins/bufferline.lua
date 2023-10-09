@@ -18,7 +18,7 @@ bufferline.setup({
     --   style = 'underline',
     -- },
   },
- highlights = {
+  highlights = {
   -- fill = { -- Espace à droite des buffers
   --     fg = '#ff0000',
   --     bg = '#00ff00',
@@ -65,7 +65,7 @@ bufferline.setup({
   --     fg = '#ff0000',
   --     bg = '#00ff00',
   -- },
- 	buffer_selected = {
+    buffer_selected = {
     fg = '#ff0000',
     bg = '#24283B',
     bold = true,
@@ -300,6 +300,6 @@ bufferline.setup({
   --     fg = '#ff0000',
   --     bg = '#00ff00',
   -- }
- },
+  },
 })
 vim.o.background = "dark" -- or "light" for light mode
