@@ -20,7 +20,19 @@ local plugins = {
   'tpope/vim-commentary', -- comment made easy
   'mattn/emmet-vim', -- generate tag trees easily
   'christoomey/vim-tmux-navigator', -- pour naviguer dans les fenêtres
+  'lukas-reineke/indent-blankline.nvim', -- Show a vertical line for paragraphs
   'github/copilot.vim', -- pour utiliser github copilot
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {}
+    end,
+  }, -- finder like tree window
   { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' }, -- les tabs en haut des buffers
   -- { 'ellisonleao/gruvbox.nvim', priority = 1000 }, -- thème pour vim
   {
@@ -61,17 +73,6 @@ local plugins = {
     },
   }, -- lsp and autocompletion
   {
-    "nvim-tree/nvim-tree.lua",
-    version = "*",
-    lazy = false,
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("nvim-tree").setup {}
-    end,
-  }, -- finder like tree window
-  {
     "folke/which-key.nvim",
     event = "VeryLazy",
     init = function()
@@ -91,6 +92,5 @@ local plugins = {
   -- {
   --   {'akinsho/toggleterm.nvim', version = "*", config = true}
   -- }
-  { "lukas-reineke/indent-blankline.nvim" }, -- Show a vertical line for paragraphs
 }
 require("lazy").setup(plugins, opts)
