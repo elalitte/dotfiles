@@ -52,3 +52,20 @@ matches:
       function myFunction() {
         ...
       }
+  - trigger: ":pfor"
+    replace: |
+      for ( $i = 0; $i<count($xxx); $i++) {
+        ...
+      }
+  - trigger: ":pif"
+    replace: |
+      if ( cond ) {
+        ...
+      }
+  - trigger: ":pie"
+    replace: |
+      if ( cond ) {
+        ...
+      } else {
+        ...
+      }
