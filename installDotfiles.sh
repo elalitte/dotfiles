@@ -1,19 +1,22 @@
 #!/bin/bash
 
-# On teste si nvim existe, et si non, on l'installe
-which nvim >/dev/null 2<&1
-if [ $? -eq 0 ]
+# On installe la dernière version de nvim
+# On regarde sous quel système on est
+systeme=$(uname -a |cut -d " " -f 1)
+if [ $systeme = "Darwin" ]
 then
-  echo "Neovim est deja installe, on va supprimer les anciennes configurations"
-else
-  # On regarde sous quel système on est
-  systeme=$(uname -a |cut -d " " -f 1)
-  if [ $systeme = "Darwin" ]
-  then
-    brew install neovim
-  else 
-    apt-get -y install neovim
-  fi
+  brew install neovim
+else 
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  chmod u+x nvim.appimage
+  mv nvim.appimage /usr/local/bin/
+  CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
+  set -u
+  sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
 fi
 
 # On teste si tmux existe, et si non, on l'installe
