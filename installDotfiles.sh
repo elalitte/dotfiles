@@ -4,8 +4,10 @@
 # On regarde sous quel système on est
 systeme=$(uname -a |cut -d " " -f 1)
 if [ $systeme = "Darwin" ]
+# Si c'est mac on installe avec brew
 then
   brew install neovim
+# Sinon on installe avec la dernière version image
 else 
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
   chmod u+x nvim.appimage
@@ -17,6 +19,19 @@ else
   sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
+fi
+
+# On installe nerd-fonts
+if [ $systeme = "Darwin" ]
+then
+  brew tap homebrew/cask-fonts
+  brew install --cask font-hack-nerd-font
+else
+  mkdir /usr/share/fonts/Hack
+  cd /usr/share/fonts/Hack
+  wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
+  unzip Hack.zip
+  fc-cache -fv
 fi
 
 # On teste si tmux existe, et si non, on l'installe
