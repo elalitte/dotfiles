@@ -69,7 +69,12 @@ local plugins = {
       {'hrsh7th/nvim-cmp'},     -- Required
       {'hrsh7th/cmp-path'},     -- Optional for path completion
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
+      {'L3MON4D3/LuaSnip',     -- Required
+        dependencies = {
+          {'saadparwaiz1/cmp_luasnip'},     -- Required
+          {'rafamadriz/friendly-snippets'}, -- Optional
+        },
+      },
     },
   }, -- lsp and autocompletion
   {
