@@ -9,6 +9,7 @@ then
   brew install neovim
 # Sinon on installe avec la dernière version image
 else 
+  [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
   chmod u+x nvim.appimage
   mv nvim.appimage /usr/local/bin/
