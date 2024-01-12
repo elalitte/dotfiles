@@ -15,6 +15,7 @@ require('mason-lspconfig').setup({
     'dockerls',
     'docker_compose_language_service',
     'eslint',
+    'html',
     'jsonls',
     'lua_ls',
     'tailwindcss',
