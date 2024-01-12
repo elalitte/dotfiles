@@ -41,7 +41,7 @@ local plugins = {
     priority = 1000,
     opts = {},
   }, -- thème pour la coloration
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' } }, -- fuzzy finder
+  { 'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' } }, -- fuzzy finder
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
