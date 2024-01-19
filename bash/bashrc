@@ -5,14 +5,23 @@
 # PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
 # umask 022
 
-# You may uncomment the following lines if you want `ls' to be colorized:
-export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
-alias ls='ls $LS_OPTIONS'
+# Système
+systeme=$(uname -s)
 alias ip='ip --color'
-# alias ll='ls $LS_OPTIONS -l'
-# alias l='ls $LS_OPTIONS -lA'
-#
+# alias de ls pour exa
+alias ls="exa"
+# alias de cat pour bat
+alias cat="bat -p"
+alias history="history 0"
+# Alias pour neovim
+if [ "$systeme" = "Darwin" ]; then
+  alias vim='nvim'
+  alias v='nvim'
+  export PATH=/opt/homebrew/bin:$PATH
+else
+  alias vim='/usr/local/bin/nvim.appimage'
+  alias v='/usr/local/bin/nvim.appimage'
+fi
 # Some more alias to avoid making mistakes:
 # alias rm='rm -i'
 # alias cp='cp -i'

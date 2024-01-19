@@ -7,7 +7,7 @@ if [ $systeme = "Darwin" ]
 # Si c'est mac on installe avec brew
 then
   brew install neovim
-# Sinon on installe avec la dernière version image
+# Sinon on installe avec la dernière version image pour linux
 else 
   [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
@@ -101,4 +101,21 @@ then
 	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 else
 	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+fi
+
+# Installation de exa pour avoir des couleurs dans ls
+if [ $systeme = "Darwin" ]
+then
+  brew install exa
+else
+  apt install exa
+fi
+
+# Installation de bat pour avoir un cat avec des couleurs
+if [ $systeme = "Darwin" && ! -f /opt/homebrew/bin/bat ]
+then
+  brew install bat
+elif [ ! -f /usr/bin/batcat ]
+then
+  apt install bat
 fi
