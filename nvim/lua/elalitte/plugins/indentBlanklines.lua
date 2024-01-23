@@ -1,7 +1,7 @@
 vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1F2335 gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent2 guibg=#24283B gui=nocombine]]
 
-require("indent_blankline").setup {
+require("ibl").setup({
     -- char = "",
     -- char_highlight_list = {
     --     "IndentBlanklineIndent1",
@@ -15,5 +15,5 @@ require("indent_blankline").setup {
     --     "IndentBlanklineIndent1",
     --     "IndentBlanklineIndent2",
     -- },
-    show_trailing_blankline_indent = false,
-}
+    --show_trailing_blankline_indent = false,
+})

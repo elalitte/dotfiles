@@ -20,7 +20,15 @@ local plugins = {
   'tpope/vim-commentary', -- comment made easy
   'mattn/emmet-vim', -- generate tag trees easily
   'christoomey/vim-tmux-navigator', -- pour naviguer dans les fenêtres
-  'lukas-reineke/indent-blankline.nvim', -- Show a vertical line for paragraphs
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent = {
+        char = {"│"},
+      },
+    },
+  }, -- Show a vertical line for paragraphs
   'github/copilot.vim', -- pour utiliser github copilot
   {
     "nvim-tree/nvim-tree.lua",
