@@ -22,6 +22,14 @@ else
   sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
 fi
 
+# On install un clipboard manager pour pouvoir copier coller entre nvim et le systeme
+if [ $systeme = "Darwin" ]
+then
+  brew install pbcopy
+else
+  apt-get install xclip
+fi
+
 # On installe npm notamment pour neovim
 if [ $systeme = "Darwin" ]
 # Si c'est mac on installe avec brew
