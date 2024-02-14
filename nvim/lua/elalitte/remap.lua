@@ -42,4 +42,5 @@ end)
 
 -- maison
 vim.keymap.set("n", "<leader>t", ":NvimTreeToggle<CR>") -- toogle nvim.tree
+vim.keymap.set("n", "<leader>m", ":MarkdownPreview<CR>") -- toogle markdown preview
 
