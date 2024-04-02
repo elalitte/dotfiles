@@ -11,7 +11,7 @@ alias ip='ip --color'
 # alias de ls pour exa
 alias ls="exa"
 # alias de cat pour bat
-alias cat="bat -p"
+alias cat="batcat -p"
 alias history="history 0"
 # Alias pour neovim
 if [ "$systeme" = "Darwin" ]; then
