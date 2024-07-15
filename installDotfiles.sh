@@ -127,3 +127,7 @@ elif [ ! -f /usr/bin/batcat ]
 then
   apt install bat
 fi
+
+# Installation de atuin
+bash <(curl --proto '=https' --tlsv1.2 -sSf https://setup.atuin.sh)
+source $HOME/.atuin/bin/env
