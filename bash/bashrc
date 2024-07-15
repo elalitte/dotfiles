@@ -36,6 +36,9 @@ function gacp() {
   git push origin master
 }
 
+# Ajout pour atuin
+eval "$(atuin init bash)"
+
 # parse_git_branch()
 # {
 #   local BRANCH=$(git symbolic-ref HEAD --short 2> /dev/null)
