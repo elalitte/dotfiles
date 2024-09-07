@@ -77,17 +77,17 @@ fi
 # lien symbolique vers le nouveau. Sinon, on créé juste le lien
 if [ -d ~/.config/nvim ]
 then
-	mv ~/.config/nvim ~/.config/nvim.old
-	ln -s ~/dotfiles/nvim/ ~/.config/
+  mv ~/.config/nvim ~/.config/nvim.old
+  ln -s ~/dotfiles/nvim/ ~/.config/
   rm -rf ~/.local/share/nvim
   rm -rf ~/.local/state/nvim
 else
   if [ -d ~/.config ]
   then
-	  ln -s ~/dotfiles/nvim/ ~/.config/
+    ln -s ~/dotfiles/nvim/ ~/.config/
   else
     mkdir ~/.config/
-	  ln -s ~/dotfiles/nvim/ ~/.config/
+    ln -s ~/dotfiles/nvim/ ~/.config/
   fi
 fi
 
@@ -95,20 +95,20 @@ fi
 # Sinon, on créé juste le lien
 if [ -f ~/.tmux.conf ]
 then
-	mv ~/.tmux.conf ~/.tmux.conf.old
-	ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+  mv ~/.tmux.conf ~/.tmux.conf.old
+  ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 else
-	ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+  ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 fi
 
 # Si le .bashrc existe on le sauvegarde et on créé un lien symbolique vers le nouveau
 # Sinon, on créé juste le lien
 if [ -f ~/.bashrc ]
 then
-	mv ~/.bashrc ~/.bashrc.old
-	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  mv ~/.bashrc ~/.bashrc.old
+  ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 else
-	ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 fi
 
 # Installation de exa pour avoir des couleurs dans ls
