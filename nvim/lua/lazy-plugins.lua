@@ -41,17 +41,17 @@ require('lazy').setup({
 
   require 'kickstart/plugins/mini',
 
-  require 'kickstart/plugins/treesitter', -- Pour pouvoir analyser les langages
+  require 'kickstart/plugins/treesitter',         -- Pour pouvoir analyser les langages
 
-  require 'kickstart/plugins/nvim-tree', -- Navigateur de fichiers
+  require 'kickstart/plugins/nvim-tree',          -- Navigateur de fichiers
 
   require 'kickstart/plugins/vim-tmux-navigator', -- Pour se déplacer d'une fenêtre à l'autre entre tmux et nvim automatiquement
 
-  require 'kickstart/plugins/bufferline', -- Pour avoir les onglets
+  require 'kickstart/plugins/bufferline',         -- Pour avoir les onglets
 
-  require 'kickstart/plugins/copilot', -- Copilot comme compagnon de dev
+  require 'kickstart/plugins/copilot',            -- Copilot comme compagnon de dev
 
-  require 'kickstart/plugins/flash', -- Pour se déplacer dans la page
+  require 'kickstart/plugins/flash',              -- Pour se déplacer dans la page
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
