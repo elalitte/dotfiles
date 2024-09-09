@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# On installe la dernière version de nvim
+# On installe la dernière version de neovim
 # On regarde sous quel système on est
 systeme=$(uname -a |cut -d " " -f 1)
 if [ $systeme = "Darwin" ]
@@ -22,7 +22,7 @@ else
   sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
 fi
 
-# On install un clipboard manager pour pouvoir copier coller entre nvim et le systeme
+# On installe un clipboard manager pour pouvoir copier coller entre nvim et le systeme
 if [ $systeme = "Darwin" ]
 then
   brew install pbcopy
@@ -101,14 +101,33 @@ else
   ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 fi
 
-# Si le .bashrc existe on le sauvegarde et on créé un lien symbolique vers le nouveau
+# Selon si on est sous macos (zsh) ou linux (bash) on installe le bon fichier de configuration
+if [ $systeme = "Darwin" ]
+# Si le .bashrc (.zshrc) existe on le sauvegarde et on créé un lien symbolique vers le nouveau
 # Sinon, on créé juste le lien
-if [ -f ~/.bashrc ]
 then
-  mv ~/.bashrc ~/.bashrc.old
-  ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  if [ -f ~/.zshrc ]
+  then
+    mv ~/.zshrc ~/.zshrc.old
+    ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+  else
+    ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+  fi
+  if [ -f ~/.zprofile ]
+  then
+    mv ~/.zprofile ~/.zprofile.old
+    ln -s ~/dotfiles/zsh/zprofile ~/.zprofile
+  else
+    ln -s ~/dotfiles/zsh/zprofile ~/.zprofile
+  fi
 else
-  ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  if [ -f ~/.bashrc ]
+  then
+    mv ~/.bashrc ~/.bashrc.old
+    ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  else
+    ln -s ~/dotfiles/bash/bashrc ~/.bashrc
+  fi
 fi
 
 # Installation de exa pour avoir des couleurs dans ls

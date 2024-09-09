@@ -1,0 +1,20 @@
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+# ajout de Z pour reconnaître les répertoires
+# . ~/dotfiles/bash/z.sh
+# alias de ls pour exa
+alias ls="exa"
+# alias de cat pour bat 
+alias cat="bat -p"
+
+# Setting PATH for Python 3.11
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:/opt/homebrew:${PATH}"
+export PATH
+
+# function to easily push to github
+function gacp() {
+  git add .
+  git commit -m "$1"
+  git push origin master
+}

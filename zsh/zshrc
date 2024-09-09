@@ -1,0 +1,33 @@
+export PATH=/opt/homebrew/bin:$PATH
+alias vim=nvim
+alias history="history 0"
+alias zvim='nvim $(fzf --preview="bat --color=always {}")'
+# echo 'eval "$(zellij setup --generate-auto-start zsh)"' >> ~/.zshrc
+# eval "$(zellij setup --generate-auto-start zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# pnpm
+export PNPM_HOME="/Users/elalitte/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh --disable-up-arrow)"
+
+# Make ^Z toggle between ^Z and fg
+function ctrlz() {
+if [[ $#BUFFER == 0 ]]; then
+    fg >/dev/null 2>&1 && zle redisplay
+else
+    zle push-input
+fi
+}
+
+zle -N ctrlz
+bindkey '^Z' ctrlz
