@@ -40,6 +40,18 @@ else
   then
     apt install -y gcc
   fi
+  # luarocks
+  dpkg -l |grep luarocks 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y luarocks
+  fi
+  # ripgrep
+  dpkg -l |grep ripgrep 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y ripgrep
+  fi
 
   [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
