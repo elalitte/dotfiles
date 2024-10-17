@@ -8,10 +8,42 @@ if [ $systeme = "Darwin" ]
 then
   brew install neovim
 # Sinon on installe avec la dernière version image pour linux
-else 
+else
+  # On regarde si on a les outils dont on dépend par la suite
+  # sudo
+  dpkg -l |grep sudo 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y sudo
+  fi
+  # curl
+  dpkg -l |grep curl 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y curl
+  fi
+  # wget
+  dpkg -l |grep wget 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y wget
+  fi
+  # unzip
+  dpkg -l |grep unzip 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y unzip
+  fi
+  # gcc
+  dpkg -l |grep gcc 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y gcc
+  fi
+
   [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  chmod u+x nvim.appimage
+  chmod u+x ./nvim.appimage
   mv nvim.appimage /usr/local/bin/
   CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
   set -u
@@ -27,7 +59,7 @@ if [ $systeme = "Darwin" ]
 then
   brew install pbcopy
 else
-  apt-get install xclip
+  apt install -y xclip
 fi
 
 # On installe npm notamment pour neovim
@@ -35,8 +67,8 @@ if [ $systeme = "Darwin" ]
 # Si c'est mac on installe avec brew
 then
   brew install node
-else 
-  sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg
+else
+  sudo apt-get update && sudo apt-get install -y ca-certificates curl gnupg sudo
   curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
   # Version à changer en fonction de l'évolution de node (à voir si scriptable)
   NODE_MAJOR=20
@@ -52,6 +84,7 @@ then
 else
   mkdir /usr/share/fonts/Hack
   cd /usr/share/fonts/Hack
+  apt install -y fontconfig
   wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip
   unzip Hack.zip
   fc-cache -fv
@@ -68,7 +101,7 @@ else
   if [ $systeme = "Darwin" ]
   then
     brew install tmux
-  else 
+  else
     apt-get -y install tmux
   fi
 fi
@@ -135,7 +168,7 @@ if [ $systeme = "Darwin" ]
 then
   brew install exa
 else
-  apt install exa
+  apt install -y exa
 fi
 
 # Installation de bat pour avoir un cat avec des couleurs
@@ -144,6 +177,5 @@ then
   brew install bat
 elif [ ! -f /usr/bin/batcat ]
 then
-  apt install bat
+  apt install -y bat
 fi
-
