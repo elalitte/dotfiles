@@ -22,6 +22,12 @@ else
   then
     apt install -y curl
   fi
+  # fuse
+  dpkg -l |grep fuse 2>&1 >/dev/null
+  if [ $? -ne 0 ]
+  then
+    apt install -y fuse
+  fi
   # wget
   dpkg -l |grep wget 2>&1 >/dev/null
   if [ $? -ne 0 ]
