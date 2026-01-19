@@ -8,8 +8,8 @@
 # Système
 systeme=$(uname -s)
 alias ip='ip --color'
-# alias de ls pour exa
-alias ls="exa"
+# alias de ls pour eza
+alias ls="/usr/bin/eza"
 # alias de cat pour bat
 alias cat="batcat -p"
 alias history="history 0"
