@@ -103,7 +103,7 @@ else
 fi
 
 # On teste si tmux existe, et si non, on l'installe
-whereis tmux >/dev/null 2<&1
+which tmux >/dev/null 2<&1
 if [ $? -eq 0 ]
 then
   echo "tmux est deja installe"
