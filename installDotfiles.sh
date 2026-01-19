@@ -54,7 +54,7 @@ else
   fi
 
   [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
   chmod u+x ./nvim.appimage
   mv nvim.appimage /usr/local/bin/
   CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
