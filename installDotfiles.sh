@@ -62,8 +62,8 @@ else
   [ -d /etc/apt/keyrings ] || sudo mkdir -p /etc/apt/keyrings
   curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
   chmod u+x ./nvim-linux-x86_64.appimage
-  mv nvim-linux-x86_64.appimage /usr/local/bin/
-  CUSTOM_NVIM_PATH=/usr/local/bin/nvim-linux-x86_64.appimage
+  mv nvim-linux-x86_64.appimage /usr/local/bin/nvim.appimage
+  CUSTOM_NVIM_PATH=/usr/local/bin/nvim.appimage
   set -u
   sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
